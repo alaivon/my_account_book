@@ -1,6 +1,6 @@
-class CreateAccounts < ActiveRecord::Migration[5.0]
+class CreateRecords < ActiveRecord::Migration[5.0]
   def change
-    create_table :accounts do |t|
+    create_table :records do |t|
       t.integer :amount
       t.date :period
       t.string :info
@@ -8,6 +8,6 @@ class CreateAccounts < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-    add_index :accounts, :catagory_id
+    add_index :records, :catagory_id
   end
 end

@@ -11,22 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504122548) do
+ActiveRecord::Schema.define(version: 20160504123538) do
 
-  create_table "accounts", force: :cascade do |t|
+  create_table "catagories", force: :cascade do |t|
+    t.string   "kind"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "records", force: :cascade do |t|
     t.integer  "amount"
     t.date     "period"
     t.string   "info"
     t.integer  "catagory_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["catagory_id"], name: "index_accounts_on_catagory_id"
-  end
-
-  create_table "catagories", force: :cascade do |t|
-    t.string   "kind"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["catagory_id"], name: "index_records_on_catagory_id"
   end
 
 end

@@ -1,17 +1,18 @@
 class RecordsController < ApplicationController
 	before_action :find_record, except: [:new, :create, :index]
+	before_action :authenticate_user!
 
 	def index
-		@records = Record.all
+		@records = current_user.records.all
 	end
 
 
 	def new
-		@record = Record.new
+		@record = current_user.records.build
 	end
 
 	def create
-		@record = Record.new(record_params)
+		@record = current_user.records.build(record_params)
 		if @record.save
 			redirect_to records_url, notice: "You add a new record successfully!"
 		else
@@ -39,7 +40,7 @@ class RecordsController < ApplicationController
 	private
 
 	def find_record
-		@record = Record.find(params[:id])
+		@record = current_user.records.find(params[:id])
 	end
 
 	def record_params

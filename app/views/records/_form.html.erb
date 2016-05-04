@@ -1,0 +1,17 @@
+<%= form_for @record do |f| %>
+  
+
+	<%= f.label "Types" %> <br>
+	<%= f.collection_select :catagory_id, Catagory.all, :id, :kind, { promt: "Choose a Type" } %> <br>
+
+  <%= f.label :period %>	<br>
+  <%= f.date_select :period %> <br>
+
+	<%= f.label :amount %> <br>
+	<%= f.number_field :amount %> <br>
+
+	<%= f.label :info %> <br>
+	<%= f.text_field :info %> <br>
+
+	<%= f.submit %>
+<% end %>

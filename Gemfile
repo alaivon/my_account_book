@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+
+gem 'will_paginate', '~> 3.1.0'
 gem  'faker'
 gem "font-awesome-rails"
 gem 'bootstrap-sass', '~> 3.3.6'

@@ -15,6 +15,3 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome";

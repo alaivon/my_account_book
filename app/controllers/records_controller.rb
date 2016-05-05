@@ -3,7 +3,11 @@ class RecordsController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-		@records = current_user.records.all
+		@revenue_month_record  = current_user.records.past_month(1)
+		@expense_month_record  = current_user.records.past_month(2)
+		@revenue_year_record  = current_user.records.past_year(1)
+		@expense_year_record  = current_user.records.past_year(2)
+
 	end
 
 

@@ -1,6 +1,7 @@
 class RecordsController < ApplicationController
 	before_action :find_record, except: [:new, :create, :index, :revenue_record, :expense_record]
 	before_action :authenticate_user!
+	helper_method :sort_direction, :sort_column
 
 	def index
 		@revenue_month_record  = current_user.records.past_month(1)
@@ -12,11 +13,12 @@ class RecordsController < ApplicationController
 
 
 	def revenue_record
-		@revenue_record = current_user.records.find_type(1)
+		@revenue_record = current_user.records.find_type(1).order(sort_column + " " + sort_direction)
 	end
 
 	def expense_record
-		@expense_record = current_user.records.find_type(2)
+		@expense_record = current_user.records.find_type(2).order(sort_column + " " + sort_direction)
+
 	end
 
 	def new
@@ -59,7 +61,13 @@ class RecordsController < ApplicationController
 		params.require(:record).permit(:amount, :period, :info, :catagory_id)
 	end
 
+	def sort_column
+		params[:sort] || "period"
+	end
 
+	def sort_direction
+		params[:direction] || "desc"
+	end
 
 
 end

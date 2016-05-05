@@ -1,0 +1,21 @@
+<thead>
+	<tr>
+		<th>Date</th>
+		<th>Amount</th>
+		<th>Info</th>
+		<th>Options</th>
+	</tr>
+</thead>
+<tbody>
+	<% record.each do |record| %>
+		<tr>
+			<td><%= record.period %></td>
+			<td><%= number_to_currency(record.amount) %></td>
+			<td><%= record.info %></td>
+			<td>
+				<%= link_to "Edit", edit_record_path(record)  %> | 
+				<%= link_to "Delete", record, method: :delete, data: {confirm: "Are you sure?"}  %>
+			</td>
+		</tr>
+	<% end %>
+</tbody>

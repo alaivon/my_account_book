@@ -1,5 +1,5 @@
 class RecordsController < ApplicationController
-	before_action :find_record, except: [:new, :create, :index]
+	before_action :find_record, except: [:new, :create, :index, :revenue_record, :expense_record]
 	before_action :authenticate_user!
 
 	def index
@@ -10,6 +10,14 @@ class RecordsController < ApplicationController
 
 	end
 
+
+	def revenue_record
+		@revenue_record = current_user.records.find_type(1)
+	end
+
+	def expense_record
+		@expense_record = current_user.records.find_type(2)
+	end
 
 	def new
 		@record = current_user.records.build

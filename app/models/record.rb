@@ -4,7 +4,7 @@ class Record < ApplicationRecord
 	validates :amount, presence: true
 	validates :amount, numericality: {greater_than_or_equal_to: 1}, allow_blank: true
 
-
+	scope :find_type, ->(catagory_id) {where(catagory_id: catagory_id).order("period DESC")}
 
 	scope :past_month, ->(catagory_id) {where(catagory_id: catagory_id, period: (Time.now.beginning_of_month..Time.now.end_of_month))}
 

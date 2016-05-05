@@ -18,9 +18,41 @@
 @import "bootstrap";
 @import "font-awesome";
 
+body {
+	margin: 2px;
+}
+
+.content {
+	
+	margin-bottom: 2em;
+}
 
 @media (min-width: 768px) {
 .navbar {
     border-radius: 1px;
 	}
+}
+
+#footer {
+	border-top: 1px solid #F2E1E1;
+	margin-top: 1em;
+	padding: 1em;
+	p {
+		text-align: center;
+	}
+}
+
+.amount {
+	font-size: 24px;
+}
+
+#expense {
+	color: #2196F3;
+}
+
+#revenue {
+	color: red;
+}
+input {
+	width: 200px;
 }

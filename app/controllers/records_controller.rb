@@ -18,7 +18,6 @@ class RecordsController < ApplicationController
 
 	def expense_record
 		@expense_record = current_user.records.find_type(2).order(sort_column + " " + sort_direction)
-
 	end
 
 	def new

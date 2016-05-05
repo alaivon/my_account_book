@@ -10,6 +10,7 @@ class Record < ApplicationRecord
 
 	scope :past_year, ->(catagory_id) {where(catagory_id: catagory_id, period: (Time.now.beginning_of_year..Time.now.end_of_year))}
 
+	scope :earliest_date, ->(catagory_id) {find_type(catagory_id).order('period ASC').first.period} 
 
 	def self.total_amount
 		sum(:amount)

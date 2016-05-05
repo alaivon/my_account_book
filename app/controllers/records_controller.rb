@@ -13,11 +13,11 @@ class RecordsController < ApplicationController
 
 
 	def revenue_record
-		@revenue_record = current_user.records.find_type(1).order(sort_column + " " + sort_direction)
+		@revenue_record = current_user.records.find_type(1).order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 10)
 	end
 
 	def expense_record
-		@expense_record = current_user.records.find_type(2).order(sort_column + " " + sort_direction)
+		@expense_record = current_user.records.find_type(2).order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 10)
 	end
 
 	def new

@@ -12,6 +12,7 @@
 				<%= render 'table', record: @expense_record %>		
 			<% end %>
 			</table>
+			<%= will_paginate @expense_record %>
 		</div>
 	</div>
 </div>

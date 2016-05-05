@@ -8,7 +8,7 @@ p.total {
 	
 #total {
 	font-style: italic;
-  color: brown;
+  color: #CDDC39;
   font-size: medium;
   font-weight: bolder;
   margin: 0 2px 0 2px;
@@ -17,4 +17,17 @@ p.total {
 #early_date {
 	color: #795548;
 	font-size: 16px;
+}
+
+
+table a, table th {
+	color: #120A07;
+}
+
+#option a{
+	color: #3F51B5;
+}
+
+.panel h3 {
+	color: #E91E63;
 }

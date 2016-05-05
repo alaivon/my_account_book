@@ -17,9 +17,24 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,400italic,500,500italic,600,700);
 
+* {
+	font-family: 'Raleway', sans-serif;
+}
 body {
 	margin: 2px;
+	background-image: url('back.png');
+	background-repeat: repeat;
+}
+
+p, td {
+	font-weight: 600;
+}
+
+h3 {
+	  font-weight: 700;
+    color: azure;
 }
 
 .content {
@@ -55,4 +70,8 @@ body {
 }
 input {
 	width: 200px;
+}
+
+#user_remember_me {
+	width: auto;
 }

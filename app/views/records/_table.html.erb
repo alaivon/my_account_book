@@ -13,10 +13,12 @@
 			<td><%= record.period %></td>
 			<td><%= number_to_currency(record.amount) %></td>
 			<td><%= record.info %></td>
-			<td>
+			<% if current_user == record.user %>
+			<td id="option">
 				<%= link_to "Edit", edit_record_path(record)  %> | 
 				<%= link_to "Delete", record, method: :delete, data: {confirm: "Are you sure?"}  %>
 			</td>
+			<% end %>
 		</tr>
 	<% end %>
 </tbody>

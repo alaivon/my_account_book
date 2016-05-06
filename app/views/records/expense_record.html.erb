@@ -7,12 +7,16 @@
 			<% else %>
 				<h3>Expense</h3> <hr>
 				<div class="show_total">
-					<p class="total">Total <span id="total"><%= render_total_amount(@expense_record) %></span> from <span id="early_date"><%= render_earliest_date(current_user.records, 2) %></span></p>
+					<p class="total">Total 
+						<span id="total"><%= render_total_amount(@current_user.records.find_type(2)) %></span> 
+						from 
+						<span id="early_date"><%= render_earliest_date(current_user.records, 2) %></span>
+					</p>
 				</div>
 				<%= render 'table', record: @expense_record %>		
+			<%= will_paginate @expense_record %>
 			<% end %>
 			</table>
-			<%= will_paginate @expense_record %>
 		</div>
 	</div>
 </div>

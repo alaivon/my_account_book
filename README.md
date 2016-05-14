@@ -73,13 +73,13 @@ end
 	ActiveSupport::CoreExtensions::Date::Calculations底下有很多date的操作方法
   上述兩個也在其中
 
-		```ruby
+	
 			Time.now.beginning_of_year(month) 可以撈出現在時間的起始年(月)
 			=> 2016-01-01 00:00:00 +0800
 
 			Time.now.beginning_of_month
 			=> 2016-05-01 00:00:00 +0800
-		```
+
 
 - 呈現的資料可以依照金額＆日期排序，[Sortable Table Columns](http://railscasts.com/episodes/228-sortable-table-columns)
 

@@ -16,27 +16,10 @@ class Record < ApplicationRecord
 		sum(:amount)
 	end
 
+	def self.type_find(id)
+		where(catagory_id: id)
+	end
+
 end
 
 
-# def self.included(base)
-# 		base.extend(MonthData)
-# 		base.class_eval do
-# 			scope :search, ->(period) {where(["period LIKE ?", "%#{period}%"])}
-# 		end
-# 	end
-
-# 	module MonthData
-
-
-# 		def past_data	
-# 			where(period: (Time.now.beginning_of_month..Time.now.end_of_month))
-# 		end
-
-# 		def this_year_data
-# 			where(period: (Time.now.beginning_of_year..Time.now.end_of_year))
-# 		end
-
-# 		def set_date
-# 			pluck(:period).collect{|date| date.strftime("%Y-%m")}.uniq!
-# 		end

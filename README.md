@@ -69,9 +69,11 @@ end
 	```
 
 - beginning_of_year(month) & end_of_year(month)
+
 	ActiveSupport::CoreExtensions::Date::Calculations底下有很多date的操作方法
   上述兩個也在其中
-		```
+
+		```ruby
 			Time.now.beginning_of_year(month) 可以撈出現在時間的起始年(月)
 			=> 2016-01-01 00:00:00 +0800
 

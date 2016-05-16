@@ -13,6 +13,11 @@ We could record our cash flow to help save money in this appilication.
  .
 	- As a user, I could view 10 records per page.
 
+
+	測試帳戶： admin@test.com,  admin1234
+
+	https://my-account-book.herokuapp.com/
+
 ## Gem
 
 - [will_paginate](https://github.com/mislav/will_paginate)
